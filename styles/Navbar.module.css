@@ -1,0 +1,48 @@
+.navbar{
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+}
+
+.right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+}
+
+.navitem{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.footer{
+    background-color: rgb(245, 234, 235);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    margin-top: 3em;
+    padding: 1em;
+}
+
+.section > h3 {
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1.5em;
+}
+
+.footitem{
+    margin-top: 1em;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: gray;
+}
