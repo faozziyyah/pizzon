@@ -16,10 +16,10 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    /*prices: {
+    prices: {
       type: [Number],
       required: true,
-    }, */
+    },
   },
   { timestamps: true }
 );
