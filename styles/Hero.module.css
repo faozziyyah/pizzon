@@ -169,15 +169,27 @@
 }
 
 .price1{
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     color: #d1411e;
+    margin-top: 4em;
+}
+
+.desc1{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .sizes{
     display: flex;
     justify-content: space-between;
     width: 40%;
+    margin-top: 1em;
+}
+
+.choose {
+    font-size: 25px;
 }
 
 .size{
