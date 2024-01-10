@@ -4,11 +4,13 @@ import { Inter } from 'next/font/google'
 import Hero from '@/components/Hero'
 import PizzaList from '@/components/PizzaList'
 import { Content } from '@/components/Content'
+import axios from 'axios'
 //import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({ products }) {
+  
   return (
     <>
       <Head>
@@ -20,10 +22,27 @@ export default function Home() {
 
       <Hero />
 
-      <PizzaList />
+      <PizzaList products={products} />
 
       <Content />
       
     </>
   )
 }
+
+export  const getServerSideProps = async () => {
+  
+    const res = await fetch('http://localhost:3000/api/products');
+    const result = await res.json()
+    const result1 = result.data
+
+    //console.log(res)
+    //console.log(result1)
+    console.log(result)
+    return {
+      props: {
+        products: result1
+      },
+    };
+
+} 

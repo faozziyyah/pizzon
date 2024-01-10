@@ -3,20 +3,20 @@ import styles from '../styles/Hero.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const PizzaCard = ({ image }) => {
+const PizzaCard = ({ pizza }) => {
   return (
-    <Link href='/product/id' className={styles.PizzaCard}>
+    <Link href={`/product/${pizza._id}`} className={styles.PizzaCard}>
 
-        <Image src={image} alt='sandwich' height='250' width='300' />
+        <Image src={pizza.img} alt='sandwich' height='250' width='300' />
 
         <div className={styles.pizzadetail}>
           
-          <h1 className={styles.title}>sandwich</h1>
-          <span className={styles.price}>$19.90</span>
+          <h1 className={styles.title}>{pizza.title}</h1>
+          <span className={styles.price}>${pizza.prices[0]}</span>
 
         </div>
 
-        <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p className={styles.desc}>{pizza.desc}.</p>
 
         <button>
           <Image src='/images/cart1.png' alt='logo' width='50' height='50'/>
