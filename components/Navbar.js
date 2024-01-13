@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/Navbar.module.css'
+import { useSelector } from "react-redux";
 import Image from 'next/image'
 import Link from 'next/link'
 //import { IconContext } from "react-icons";
 
 const Navbar = () => {
+
+  const quantity = useSelector((state) => state.cart.quantity);
+  
   const [nav, setNav] = useState(false);
 
   const links = [
@@ -52,7 +56,7 @@ const Navbar = () => {
 
         <Link href="/Cart" className={styles.cart} passHref>
           <Image src='/images/cart.png' alt='logo' width='50' height='30'/>
-          <div className={styles.count}>2</div>
+          <div className={styles.count}>{quantity}</div>
         </Link>
 
       </div>
@@ -81,7 +85,7 @@ const Navbar = () => {
 
           <Link style={{marginTop: '2em'}} href="/Cart" className={styles.cart} passHref>
             <Image src='/images/cart.png' alt='logo' width='50' height='30'/>
-            <div className={styles.count}>2</div>
+            <div className={styles.count}>{quantity}</div>
           </Link>
 
         </div>

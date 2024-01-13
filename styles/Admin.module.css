@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    margin-top: 4em;
+  }
+  
+  .table {
+    width: 100%;
+    border-spacing: 20px;
+    text-align: left;
+  }
+  
+  .button {
+    border: none;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .button:first-child {
+    background-color: teal;
+    margin-right: 10px;
+  }
+  
+  .button:last-child {
+    background-color: crimson;
+  }
+
+  @media screen and (max-width: 768px) {
+  
+      .container{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 4em;
+      }
+
+      .item{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+      }
+      
+  }
+
+  @media screen and (min-width: 769px) {
+
+    .container{  
+        padding: 50px;
+    }
+  
+    .item {
+      flex: 1;
+    }
+      
+  }

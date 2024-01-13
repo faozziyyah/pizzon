@@ -26,38 +26,23 @@ const Order = ({ order }) => {
               <tr>
 
                 <td>
-                  <span className={styles.id}>123456789</span>
+                  <span className={styles.id}>{order._id}</span>
                 </td>
 
                 <td>
-                  <span className={styles.name}>John Doe</span>
+                  <span className={styles.name}>{order.customer}</span>
                 </td>
 
                 <td>
-                  <span className={styles.address}>Elton st. 212-33 LA</span>
+                  <span className={styles.address}>{order.address}</span>
                 </td>
 
                 <td>
-                  <span className={styles.total}>$39.80</span>
+                  <span className={styles.total}>${order.total}</span>
                 </td>
 
               </tr>
             </tbody>
-
-            {/*<tr className={styles.tr}>
-              <td>
-                <span className={styles.id}>{order._id}</span>
-              </td>
-              <td>
-                <span className={styles.name}>{order.customer}</span>
-              </td>
-              <td>
-                <span className={styles.address}>{order.address}</span>
-              </td>
-              <td>
-                <span className={styles.total}>${order.total}</span>
-              </td>
-            </tr> */}
 
           </table>
 
@@ -71,7 +56,7 @@ const Order = ({ order }) => {
           <h2 className={styles.title}>CART TOTAL</h2>
 
           <div className={styles.totaltext}>
-            <b className={styles.totaltexttitle}>Subtotal:</b> $79.60
+            <b className={styles.totaltexttitle}>Subtotal:</b> ${order.total}
           </div>
 
           <div className={styles.totaltext}>
@@ -79,7 +64,7 @@ const Order = ({ order }) => {
           </div>
 
           <div className={styles.totaltext}>
-            <b className={styles.totaltexttitle}>Total:</b> $79.60
+            <b className={styles.totaltexttitle}>Total:</b> ${order.total}
           </div>
 
           <button disabled> PAID </button>
@@ -91,11 +76,11 @@ const Order = ({ order }) => {
   );
 };
 
-/*export const getServerSideProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
   return {
     props: { order: res.data },
   };
-}; */
+}; 
 
 export default Order;
