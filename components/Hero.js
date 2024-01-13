@@ -21,7 +21,7 @@ const Hero = () => {
         </article>
 
         <div className={styles.hero}>
-          <Image src='/images/pizza1.png' alt='logo' width='400' height='400' style={{position: 'relative', top: '2em', right:'15em'}}/>
+          <Image src='/images/pizza1.png' className={styles.heroimg} alt='logo' width='400' height='400' />
         </div>
 
       </div>

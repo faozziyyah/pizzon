@@ -1,19 +1,23 @@
 import React from 'react'
 import styles from '../styles/Content.module.css'
 import Image from 'next/image'
-import { StrenghtCard } from './StrenghtCard';
-import { TestimonialCard } from './TestimonialCard';
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Content = () => {
 
-  const imageUrl = '/images/food.png';
-  const imageUrl2 = '/images/fan.png';
-  const imageUrl3 = '/images/face.png';
-  const imageUrl4 = '/images/location.png';
-  
-  const profileUrl = '/images/client-2.png';
-  const profileUrl1 = '/images/client-4.png';
-  const profileUrl2 = '/images/client-3.png';
+  const images = [
+    '/images/food.png',
+    '/images/fan.png',
+    '/images/face.png',
+    '/images/location.png',
+  ];
+
+  const profiles = [
+    '/images/client-2.png',
+    '/images/client-4.png',
+    '/images/client-3.png',
+  ];
 
   return (
     <div className={styles.content}>
@@ -30,15 +34,33 @@ const Content = () => {
           <Image src='/images/pizza-pice.png' alt='pizza'  height='250' width='300' />
           
         </div>
+        
+          <Carousel
+            showArrows={true}
+            showIndicators={true}
+            infiniteLoop={true}
+            dynamicHeight={false}
+            showThumbs={false} 
+            className={styles.mySwiper}
+          >
+            {images.map((img, i) => (
 
-        <div className={styles.bottom}>
+              <div key={i} className={styles.swipItem}>
 
-          <StrenghtCard image={imageUrl} />
-          <StrenghtCard image={imageUrl2} />
-          <StrenghtCard image={imageUrl3} />
-          <StrenghtCard image={imageUrl4} />
+                <div className={styles.imgBox}>
+                  <Image src={img} alt="slides" height='50' width='50' />
+                </div>
 
-        </div>
+                <div className={styles.detail}>
+                  <h3>All Kinds of Foods</h3>
+                  <p>Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+                </div>
+
+              </div>
+
+            ))}
+
+          </Carousel>
 
       </div>
 
@@ -52,11 +74,33 @@ const Content = () => {
         </div>
 
         <div className={styles.bottom} style={{marginTop: '2em'}}>
+        
+          <Carousel
+            showArrows={true}
+            showIndicators={true}
+            infiniteLoop={true}
+            dynamicHeight={false}
+            showThumbs={false} 
+            className={styles.mySwiper}
+          >
+            {profiles.map((profile, i) => (
 
-          <TestimonialCard image={profileUrl} />
-          <TestimonialCard image={profileUrl1} />
-          <TestimonialCard image={profileUrl2} />
-          <TestimonialCard image={profileUrl1} />
+              <div key={i} className={styles.swipItem}>
+
+                <div className={styles.imgBox}>
+                  <Image src={profile} alt="slides" height='70' width='70' style={{borderRadius: '50%'}} />
+                </div>
+
+                <div className={styles.detail}>
+                  <h3>Tarka Bowa</h3>
+                  <p>Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+                </div>
+
+              </div>
+
+            ))}
+
+          </Carousel>
 
         </div>
 

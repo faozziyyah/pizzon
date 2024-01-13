@@ -9,6 +9,7 @@
 .strenght{
     display: flex;
     flex-direction: column;
+    padding-bottom: 2em;
     background-color: rgb(255 251 236);
 }
 
@@ -30,22 +31,25 @@
     margin-left: 1.5em;
 }
 
-.bottom{
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
+.mySwiper{
+    width: 50%;
     margin: auto;
-    margin-bottom: 2em;
+    border: 1px solid #bdbbbb;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #bdbbbb;
+   /* background-color: rgb(226, 187, 207);*/
 }
 
-.StrenghtCard{
+.swipItem{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
 }
 
-.StrenghtCard > h3, .StrenghtCard > p, .TestimonialCard > h3, .TestimonialCard > p {
-    margin-top: 1em;
+.imgBox{
+    margin-bottom: 1em;
 }
 
 .feedback{
@@ -54,15 +58,17 @@
     margin-top: 2em;
 }
 
-.TestimonialCard{
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid #bdbbbb;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px #bdbbbb;
-    padding: 1em;
+@media screen and (max-width: 768px) {
+
+    .top{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2em;
+    }
+
+    .mySwiper{
+        width: 80%;
+    }
+    
 }
