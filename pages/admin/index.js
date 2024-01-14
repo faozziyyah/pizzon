@@ -2,6 +2,7 @@ import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "../../styles/Admin.module.css";
+import {BASE_API_URL} from '@/util/constants'
 
 const Index = ({ orders, products }) => {
     
@@ -157,11 +158,11 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productRes = await fetch("http://localhost:3000/api/products");
+  const productRes = await fetch(`${BASE_API_URL}/api/products`);
   const result = await productRes.json()
   const result1 = result.data
 
-  const orderRes = await fetch("http://localhost:3000/api/orders");
+  const orderRes = await fetch(`${BASE_API_URL}/api/orders`);
   const orderresult = await orderRes.json()
   const result2 = orderresult.data
 

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import axios from 'axios'
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
+import {BASE_API_URL} from '@/util/constants'
 
 const Product = ({pizza}) => {
 
@@ -111,7 +112,8 @@ const Product = ({pizza}) => {
 export  const getServerSideProps = async ({params}) => {
     const pizzaId = params.id; 
   
-    const responseId = await axios.get(`http://localhost:3000/api/products/${pizzaId}`);
+    //const responseId = await axios.get(`http://localhost:3000/api/products/${pizzaId}`);
+    const responseId = await axios.get(`${BASE_API_URL}/api/products/${pizzaId}`);
     //const result = await responseId.json()
     const result = responseId.data;
     //const res = result.data;
