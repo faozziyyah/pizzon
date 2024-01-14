@@ -11,6 +11,10 @@ import {BASE_API_URL} from '@/util/constants'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({ products }) {
+
+  if (!BASE_API_URL) {
+    return null
+  }
   
   return (
     <>
