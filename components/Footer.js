@@ -1,8 +1,33 @@
 import React from 'react'
 import styles from '../styles/Navbar.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
+
+  const links = [
+    {
+      id: 1,
+      link: "home",
+    },
+    {
+      id: 2,
+      link: "products",
+    },
+    {
+      id: 3,
+      link: "prices",
+    },
+    {
+      id: 4,
+      link: "blog",
+    },
+    {
+      id: 5,
+      link: "contact",
+    },
+  ];
+
   return (
     <div className={styles.footer}>
 
@@ -14,11 +39,11 @@ const Footer = () => {
 
           <div className={styles.footnav}>
 
-            <p className={styles.footitem}>Home</p>
-            <p className={styles.footitem}>products</p>
-            <p className={styles.footitem}>prices</p>
-            <p className={styles.footitem}>blog</p>
-            <p className={styles.footitem}>contact</p>
+            {links.map(({ id, link }) => (
+              <div key={id} className={styles.footitem} style={{textTransform: 'capitalize'}}>
+                <Link href={link}>{link}</Link>
+              </div>
+            ))}
 
           </div>
 
